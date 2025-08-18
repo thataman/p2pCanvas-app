@@ -16,7 +16,11 @@ const serviceUri = process.env.serviceUri
 
 const redis = new Valkey(serviceUri);
 
-
+app.get("/servicekeeper",async(req,res)=>{
+    
+    res.status(200).json("success")
+return
+})
 
 app.get("/generate",async(req,res)=>{
      const id = gid();

@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 const serviceUri = process.env.serviceUri
-const PORT = process.env.PORT || 4445;
+
 
 
 
@@ -38,8 +38,5 @@ return
 
 // all the middleware and routes will be declared here like app.get or app.post
 
-app.listen(PORT ,()=>{
-// console.log("http server started");
 
-})
 export default app;

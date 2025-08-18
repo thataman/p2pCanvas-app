@@ -91,7 +91,7 @@ function PopupModal({ children }: { children: React.ReactNode }) {
       //   "method": "create",
       //   "id": client_id
       // })
-     const res = await axios.get('http://localhost:4445/generate')
+     const res = await axios.get('https://p2pcanvas-app.onrender.com/generate')
      navigate(`/room/${res.data.id}`);
 
     }

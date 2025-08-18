@@ -9,7 +9,7 @@ import { ExcalidrawImperativeAPI } from '@excalidraw/excalidraw/types/types';
 
 
 
-const ExcalidrawCanvas = () => {
+const DrawCanvas = () => {
 
   const { id } = useParams()
   const webSocketService = WebSocketService.getInstance();
@@ -44,7 +44,7 @@ const ExcalidrawCanvas = () => {
     console.log("ran hk");
 
     const roomcheck = async () => {
-      const res = await axios.get(`http://localhost:4445/${id}`)
+      const res = await axios.get(`https://p2pcanvas-app.onrender.com/${id}`)
       setstartkru(res.data.id)
     }
 
@@ -97,7 +97,7 @@ const ExcalidrawCanvas = () => {
 
     const initializedWebsocket = async () => {
       try {
-        const websocket = await webSocketService.connect("ws://localhost:4444");
+        const websocket = await webSocketService.connect("wss://p2pcanvas-app.onrender.com");
 
         websocket.onmessage = (event) => {
           const message = JSON.parse(event.data);
@@ -505,4 +505,4 @@ const ExcalidrawCanvas = () => {
   );
 }
 
-export default ExcalidrawCanvas
+export default DrawCanvas
